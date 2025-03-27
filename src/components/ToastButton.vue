@@ -1,24 +1,24 @@
 <template>
-    <div class="toast-container">
-      <button @click="showDefaultToast" class="toast-button default">
-        Show Default Toast
-      </button>
-      <button @click="showSuccessToast" class="toast-button success">
-        Show Success Toast
-      </button>
-      <button @click="showErrorToast" class="toast-button error">
-        Show Error Toast
-      </button>
-      <button @click="showWarningToast" class="toast-button warning">
-        Show Warning Toast
-      </button>
-      <button @click="showCustomToast" class="toast-button custom">
-        Show Custom Toast
-      </button>
-    </div>
-  </template>
+  <div class="toast-container">
+    <button @click="showDefaultToast" class="toast-button default">
+      Show Default Toast
+    </button>
+    <button @click="showSuccessToast" class="toast-button success">
+      Show Success Toast
+    </button>
+    <button @click="showErrorToast" class="toast-button error">
+      Show Error Toast
+    </button>
+    <button @click="showWarningToast" class="toast-button warning">
+      Show Warning Toast
+    </button>
+    <button @click="showCustomToast" class="toast-button custom">
+      Show Custom Toast
+    </button>
+  </div>
+</template>
   
-  <script>
+<script>
   import { useToast } from 'vue-toastification'
   
   export default {
@@ -27,37 +27,87 @@
       const toast = useToast()
       
       const showDefaultToast = () => {
-        toast("This is a default toast notification!")
+        toast("This is a default toast notification!", {
+          position: "top-center",
+          timeout: 3980,
+          closeOnClick: true,
+          pauseOnFocusLoss: true,
+          pauseOnHover: true,
+          draggable: false,
+          draggablePercent: 0.1,
+          showCloseButtonOnHover: false,
+          hideProgressBar: true,
+          closeButton: false,
+          icon: true,
+          rtl: false
+        })
       }
       
       const showSuccessToast = () => {
         toast.success("Operation completed successfully!", {
-          timeout: 2000
+          position: "top-center",
+          timeout: 3980,
+          closeOnClick: true,
+          pauseOnFocusLoss: true,
+          pauseOnHover: true,
+          draggable: false,
+          draggablePercent: 0.1,
+          showCloseButtonOnHover: false,
+          hideProgressBar: true,
+          closeButton: false,
+          icon: true,
+          rtl: false
         })
       }
       
       const showErrorToast = () => {
         toast.error("Oops! Something went wrong.", {
-          timeout: 4000
+          position: "top-center",
+          timeout: 3980,
+          closeOnClick: true,
+          pauseOnFocusLoss: true,
+          pauseOnHover: true,
+          draggable: false,
+          draggablePercent: 0.1,
+          showCloseButtonOnHover: false,
+          hideProgressBar: true,
+          closeButton: false,
+          icon: true,
+          rtl: false
         })
       }
 
       const showWarningToast = () => {
         toast.warning("Warning!", {
-          timeout: 4000
+          position: "top-center",
+          timeout: 3980,
+          closeOnClick: true,
+          pauseOnFocusLoss: true,
+          pauseOnHover: true,
+          draggable: false,
+          draggablePercent: 0.1,
+          showCloseButtonOnHover: false,
+          hideProgressBar: true,
+          closeButton: false,
+          icon: true,
+          rtl: false
         })
       }
       
       const showCustomToast = () => {
         toast.info("Here's some information for you", {
-          position: "top-right",
-          icon: {
-            iconClass: "fas fa-info-circle", // If you're using Font Awesome
-            iconTag: "i"
-          },
-          transition: "Vue-Toastification__bounce",
-          maxToasts: 3,
-          newestOnTop: true
+          position: "top-center",
+          timeout: 3980,
+          closeOnClick: true,
+          pauseOnFocusLoss: true,
+          pauseOnHover: true,
+          draggable: false,
+          draggablePercent: 0.1,
+          showCloseButtonOnHover: false,
+          hideProgressBar: true,
+          closeButton: false,
+          icon: true,
+          rtl: false
         })
       }
       
@@ -74,6 +124,7 @@
   
   <style scoped>
   .toast-container {
+    position: fixed;
     display: flex;
     flex-direction: column;
     gap: 1rem;
